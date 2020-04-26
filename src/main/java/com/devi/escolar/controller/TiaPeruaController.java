@@ -18,7 +18,7 @@ public class TiaPeruaController {
     @Autowired
     private TiaPeruaRepository tiaPeruaRepository;
 
-    @GetMapping
+    @GetMapping("/tia")
     public List<TiaPerua> getTiaPerua(){
         return tiaPeruaRepository.findAll();
     }
