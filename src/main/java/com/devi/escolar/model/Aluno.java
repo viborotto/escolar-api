@@ -7,19 +7,13 @@ public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long aluno_id;
+    private Long id;
 
     private String nome;
 
     private Integer idade;
 
     private String sala;
-
-    @ManyToOne
-    @JoinColumn(name = "escola_id",referencedColumnName="escola_id",nullable=false)
-    private Escola escola;
-
-//    private Pagamento pagamento; tem que ser um ENUM??
 
     private String periodo;
 
@@ -28,22 +22,22 @@ public class Aluno {
     private String descricao;
 
     @ManyToOne
-    @JoinColumn(name = "tia_perua_id",referencedColumnName="tia_perua_id",nullable=false)
     private TiaPerua tiaPerua;
 
-    @OneToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="endereco_id", referencedColumnName="endereco_id",nullable=false)
+    @OneToOne
     private Endereco endereco;
+
+    //escola tem uma lista de alunos ou one to one????
 
     public Aluno() {
     }
 
-    public Long getAluno_id() {
-        return aluno_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setAluno_id(Long aluno_id) {
-        this.aluno_id = aluno_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -68,14 +62,6 @@ public class Aluno {
 
     public void setSala(String sala) {
         this.sala = sala;
-    }
-
-    public Escola getEscola() {
-        return escola;
-    }
-
-    public void setEscola(Escola escola) {
-        this.escola = escola;
     }
 
     public String getPeriodo() {

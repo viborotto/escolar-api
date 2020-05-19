@@ -8,7 +8,7 @@ public class Escola {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long escola_id;
+    private Long id;
 
     private String nome;
 
@@ -16,18 +16,17 @@ public class Escola {
     private List<Aluno> alunos;
 
     @ManyToOne
-    @JoinColumn(name = "tia_perua_id",referencedColumnName="tia_perua_id",nullable=false)
     private TiaPerua tiaPerua;
 
     public Escola() {
     }
 
-    public Long getEscola_id() {
-        return escola_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setEscola_id(Long escola_id) {
-        this.escola_id = escola_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {

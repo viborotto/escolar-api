@@ -15,11 +15,5 @@ import java.util.Optional;
 @RequestMapping("/api/escolar")
 public class TiaPeruaController {
 
-    @Autowired
-    private TiaPeruaRepository tiaPeruaRepository;
 
-    @GetMapping("/tia")
-    public List<TiaPerua> getTiaPerua(){
-        return tiaPeruaRepository.findAll();
-    }
 }

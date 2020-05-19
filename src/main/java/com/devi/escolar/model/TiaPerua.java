@@ -9,32 +9,36 @@ public class TiaPerua {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long tia_perua_id;
+    private Long id;
+
+    private String nome;
 
     private String ajudante;
 
     @OneToMany(mappedBy = "tiaPerua")
-    private List<Aluno> alunos = new ArrayList<>();
+    private List<Aluno> alunos;
 
     @OneToMany(mappedBy = "tiaPerua")
-    private List<Escola> escolas = new ArrayList<>();
+    private List<Escola> escolas;
+
 
     public TiaPerua() {
     }
 
-    public TiaPerua(Long tia_perua_id, String ajudante, List<Escola> escolas, List<Aluno> alunos) {
-        this.tia_perua_id = tia_perua_id;
-        this.ajudante = ajudante;
-        this.alunos = alunos;
-        this.escolas = escolas;
+    public Long getId() {
+        return id;
     }
 
-    public Long getTia_perua_id() {
-        return tia_perua_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setTia_perua_id(Long tia_perua_id) {
-        this.tia_perua_id = tia_perua_id;
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getAjudante() {

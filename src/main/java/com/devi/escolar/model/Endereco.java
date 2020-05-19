@@ -7,7 +7,7 @@ public class Endereco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long endereco_id;
+    private Long id;
 
     private String rua;
 
@@ -15,19 +15,18 @@ public class Endereco {
 
     private String bairro;
 
-    @OneToOne
-    @JoinColumn(name="aluno_id", referencedColumnName="aluno_id",nullable=false)
+    @OneToOne(mappedBy = "endereco")
     private Aluno aluno;
 
     public Endereco() {
     }
 
-    public Long getEndereco_id() {
-        return endereco_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setEndereco_id(Long endereco_id) {
-        this.endereco_id = endereco_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getRua() {
