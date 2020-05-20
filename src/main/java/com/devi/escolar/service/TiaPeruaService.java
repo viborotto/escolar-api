@@ -18,7 +18,9 @@ public class TiaPeruaService {
     //get
 
     //getAll
-
+    public Iterable<TiaPerua> listaTia(){
+        return tiaPeruaRepository.findAll();
+    }
     //update
 
     //delete
