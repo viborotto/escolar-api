@@ -1,5 +1,7 @@
 package com.devi.escolar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,11 +12,12 @@ public class Escola {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nome;
+    private String escola;
 
     @OneToMany(mappedBy = "escola")
     private List<Aluno> alunos;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "tiaPerua_id")
     private TiaPerua tiaPerua;
@@ -30,12 +33,12 @@ public class Escola {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getEscola() {
+        return escola;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setEscola(String escola) {
+        this.escola = escola;
     }
 
     public List<Aluno> getAlunos() {

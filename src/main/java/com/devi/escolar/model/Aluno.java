@@ -25,6 +25,8 @@ public class Aluno {
 
     private String descricao;
 
+    private String nomeEscola;
+
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "tiaPerua_id")
@@ -116,5 +118,13 @@ public class Aluno {
 
     public void setEscola(Escola escola) {
         this.escola = escola;
+    }
+
+    public String getNomeEscola() {
+        return nomeEscola;
+    }
+
+    public void setNomeEscola(String nomeEscola) {
+        this.nomeEscola = nomeEscola;
     }
 }
