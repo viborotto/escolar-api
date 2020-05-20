@@ -16,6 +16,7 @@ public class Escola {
     private List<Aluno> alunos;
 
     @ManyToOne
+    @JoinColumn(name = "tiaPerua_id")
     private TiaPerua tiaPerua;
 
     public Escola() {
@@ -52,4 +53,6 @@ public class Escola {
     public void setTiaPerua(TiaPerua tiaPerua) {
         this.tiaPerua = tiaPerua;
     }
+
+
 }

@@ -64,4 +64,5 @@ public class TiaPerua {
     public void setEscolas(List<Escola> escolas) {
         this.escolas = escolas;
     }
+
 }

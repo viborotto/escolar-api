@@ -60,4 +60,5 @@ public class Endereco {
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;
     }
+
 }

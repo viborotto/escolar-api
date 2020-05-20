@@ -22,7 +22,12 @@ public class Aluno {
     private String descricao;
 
     @ManyToOne
+    @JoinColumn(name = "tiaPerua_id")
     private TiaPerua tiaPerua;
+
+    @ManyToOne
+    @JoinColumn(name = "escola_id")
+    private Escola escola;
 
     @OneToOne
     private Endereco endereco;
@@ -103,4 +108,6 @@ public class Aluno {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
+
+
 }
