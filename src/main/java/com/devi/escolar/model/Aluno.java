@@ -21,6 +21,8 @@ public class Aluno {
 
     private String professora;
 
+    private String endereco;
+
     private String descricao;
 
     @JsonIgnore
@@ -32,8 +34,6 @@ public class Aluno {
     @JoinColumn(name = "escola_id")
     private Escola escola;
 
-    @OneToOne
-    private Endereco endereco;
 
     public Aluno() {
     }
@@ -102,13 +102,19 @@ public class Aluno {
         this.tiaPerua = tiaPerua;
     }
 
-    public Endereco getEndereco() {
+    public String getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
 
+    public Escola getEscola() {
+        return escola;
+    }
 
+    public void setEscola(Escola escola) {
+        this.escola = escola;
+    }
 }
