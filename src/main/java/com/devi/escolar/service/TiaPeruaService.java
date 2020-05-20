@@ -5,6 +5,8 @@ import com.devi.escolar.repositories.TiaPeruaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TiaPeruaService {
 
@@ -15,7 +17,11 @@ public class TiaPeruaService {
     public TiaPerua criarTiaPerua(TiaPerua tiaPerua){
         return tiaPeruaRepository.save(tiaPerua);
     }
-    //get
+    //getById
+    public TiaPerua tiaById(Long id){
+        Optional<TiaPerua> tiaPeruaOptional = tiaPeruaRepository.findById(id);
+        return tiaPeruaOptional.get();
+    }
 
     //getAll
     public Iterable<TiaPerua> listaTia(){

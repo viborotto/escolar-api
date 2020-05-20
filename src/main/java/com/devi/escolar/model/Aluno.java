@@ -1,5 +1,7 @@
 package com.devi.escolar.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,6 +23,7 @@ public class Aluno {
 
     private String descricao;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "tiaPerua_id")
     private TiaPerua tiaPerua;
@@ -31,8 +34,6 @@ public class Aluno {
 
     @OneToOne
     private Endereco endereco;
-
-    //escola tem uma lista de alunos ou one to one????
 
     public Aluno() {
     }
