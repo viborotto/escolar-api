@@ -32,6 +32,7 @@ public class Aluno {
     @JoinColumn(name = "tiaPerua_id")
     private TiaPerua tiaPerua;
 
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "escola_id")
     private Escola escola;

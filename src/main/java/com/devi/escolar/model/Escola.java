@@ -14,6 +14,7 @@ public class Escola {
 
     private String escola;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "escola")
     private List<Aluno> alunos;
 
